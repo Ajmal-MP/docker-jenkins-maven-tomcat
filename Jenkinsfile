@@ -10,11 +10,12 @@ pipeline {
         }
         
         stage('maven build') {
-            agent { docker 'maven:3.3.3' }
+            //agent { docker 'maven:3.3.3' }
             steps {
                 dir('/var/jenkins_home/workspace/docker') {
-                         sh "pwd"
-                         sh 'mvn clean package'
+                         sh "docker ps -a"
+                         //sh "pwd"
+                         //sh 'mvn clean package'
                     }
             }
         }
