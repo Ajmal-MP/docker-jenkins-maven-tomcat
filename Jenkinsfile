@@ -28,7 +28,7 @@ pipeline {
         stage ('tomcat deployment') {
             steps {
                 dir('/var/jenkins_home/workspace/docker') {
-                    deploy adapters: [tomcat8(credentialsId: '674285a7-f187-4053-97e7-c2cba1970acd', path: '', url: 'http://18.181.253.239:8081/')], contextPath: 'maven-sample', war: '**/*.war'
+                    deploy adapters: [tomcat8(credentialsId: '674285a7-f187-4053-97e7-c2cba1970acd', path: '', url: 'http://18.183.47.47:8081')], contextPath: 'maven-sample', war: '**/*.war'
                 }
                 
                 
