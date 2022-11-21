@@ -14,7 +14,7 @@ pipeline {
             steps {
                 dir('/var/jenkins_home/workspace/docker') {
                          script {
-                            sh "docker run -it --rm --name my-maven -v /var/jenkins_home/workspace/docker:/usr/local/mymaven -w /usr/src/mymaven mymaven mvn -e clean install"
+                            sh "docker run  --rm --name my-maven -v /var/jenkins_home/workspace/docker:/usr/local/mymaven -w /usr/src/mymaven mymaven mvn -e clean install"
                          }
                          //sh "pwd"
                          //sh 'mvn clean package'
