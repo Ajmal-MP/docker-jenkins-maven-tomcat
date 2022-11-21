@@ -13,7 +13,9 @@ pipeline {
             //agent { docker 'maven:3.3.3' }
             steps {
                 dir('/var/jenkins_home/workspace/docker') {
-                         sh "docker run -it --rm --name my-maven -v "$(pwd)":/usr/local/mymaven -w /usr/src/mymaven mymaven mvn -e clean install"
+                         script {
+                            sh "docker run -it --rm --name my-maven -v "$(pwd)":/usr/local/mymaven -w /usr/src/mymaven mymaven mvn -e clean install"
+                         }
                          //sh "pwd"
                          //sh 'mvn clean package'
                     }
